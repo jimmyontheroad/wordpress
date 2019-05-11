@@ -7,21 +7,21 @@
 * Author URI: http://jimmyontheroad.online/
 **/
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function nasa_add_admin_page() {	
+	//Generate  Menu Pages
 	add_menu_page( 'NASA Plugin Options', 'NASA Shortcode', 'manage_options', 'nasa_apod', 'nasa_create_page', plugin_dir_url( __FILE__ ) . '/media/icon-dashboard-nasa.png', 110 );
 
-	//Generate Sunset Admin Sub Pages
+	//Generate  Submenu Pages
 	add_submenu_page( 'nasa_apod', 'Astronomy Picture Of The Day', 'APOD', 'manage_options', 'nasa_apod', 'nasa_create_page' );
 	add_submenu_page( 'nasa_apod', 'Near Earth Object Web Service', 'Asteroids - NeoWs', 'manage_options', 'nasa_neo_feed', 'nasa_neo_feed_create_page');
 }
-
+//Activate Menu
 add_action( 'admin_menu', 'nasa_add_admin_page' );
 
-//Activate custom settings
+//Activate Custom Settings
 add_action( 'admin_init', 'nasa_custom_settings' );
 
+//Load CSS And Script
 function nasa_enqueue_admin_script( $hook ) {  
 
 	if( 'toplevel_page_nasa_apod' == $hook or 'nasa-shortcode_page_nasa_neo_feed' == $hook ){ 
@@ -52,6 +52,7 @@ function nasa_enqueue_script( ) {
 
 add_action('wp_enqueue_scripts', 'nasa_enqueue_script');
 
+//Register Settings
 function nasa_custom_settings() {
 // apod options	
 	register_setting( 'nasa-options', 'apod_options');
