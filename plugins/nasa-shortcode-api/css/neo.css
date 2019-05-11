@@ -1,0 +1,17 @@
+.neoFeed h4 { font-weight: bold; }
+.neoFeed form { border: 2px solid black; padding: 1%; border-radius: 15px; text-align: center; }
+.neoFeed button { margin-top: 15px; border-radius: 5px; }
+.neoFeedListHeader { background-color: #cbcbcb; }
+.neoFeedListHeader th { text-align: center; border: 1px solid #cbcbcb; word-break: normal; }
+.neoFeedList td { text-align: center; word-break: normal; border: none;}
+.neoFeedList tr { border: 1px solid #cbcbcb; }
+@media screen and (max-width: 782px) {
+	.form-table td { padding-left: 10px; }
+	table td, table th { display: block; }
+	.neoFeed form { width: 100%; padding: 2% }
+	.neoFeedList { width:100%; }
+	.neoFeedList td { font-size: 0.8em; }
+	.neoFeedListHeader th { font-size: 0.8em; }
+	.neoFeed h4 { font-size: 0.8em; }
+	.neoFeed h5 { font-size: 0.7em; }
+}
